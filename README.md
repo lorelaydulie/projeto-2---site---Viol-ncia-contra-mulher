@@ -1,4 +1,3 @@
-# projeto-2--site--Violencia-contra-mulher
 /* Palette Visual - Tons de Rosa */
 :root {
   --bg-primary: #fff5f7;
@@ -23,12 +22,12 @@ body.alto-contraste {
   --border-color: #661f35;
 }
 
+/* Reset Global */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  transition: background-color 0.3s, color 0.3s;
 }
 
 body {
@@ -39,6 +38,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 header {
@@ -66,6 +66,7 @@ nav a {
   text-decoration: none;
   color: var(--text-primary);
   font-weight: 600;
+  transition: color 0.2s, border-color 0.2s;
 }
 
 nav a.active, nav a:hover {
@@ -75,7 +76,6 @@ nav a.active, nav a:hover {
 
 .acessibilidade button {
   padding: 0.3rem 0.6rem;
-  margin-left: 0.3rem;
   cursor: pointer;
   background-color: var(--accent-soft);
   color: var(--text-primary);
@@ -87,6 +87,7 @@ nav a.active, nav a:hover {
 main {
   flex: 1;
   max-width: 900px;
+  width: 100%;
   margin: 2rem auto;
   padding: 0 1rem;
 }
@@ -113,7 +114,6 @@ main {
   border-radius: 0 8px 8px 0;
 }
 
-/* Seção de Relatos */
 .secao-relatos {
   margin-top: 2rem;
 }
@@ -154,19 +154,11 @@ main {
   cursor: pointer;
   font-size: 1rem;
   font-weight: bold;
+  transition: background-color 0.2s;
 }
 
 .btn-acao:hover, .btn-enviar:hover {
   background-color: var(--accent-hover);
-}
-
-.alerta-simulacao {
-  background-color: var(--accent-soft);
-  color: var(--text-primary);
-  padding: 0.75rem;
-  border-radius: 6px;
-  margin: 1rem 0;
-  border-left: 4px solid var(--accent-color);
 }
 
 blockquote.frase-motivacional {
@@ -204,32 +196,12 @@ input[type="text"], textarea {
   border: 1px solid var(--accent-color);
 }
 
-.orientacoes-ajuda {
-  margin-top: 2rem;
-}
-
-.orientacoes-ajuda ul {
-  margin-left: 1.5rem;
-  margin-top: 0.5rem;
-}
-
-.questao {
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.pergunta {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
 footer {
   text-align: center;
   padding: 1.5rem;
   background-color: var(--bg-card);
   border-top: 1px solid var(--border-color);
-  margin-top: auto;
+  margin-top: 2rem;
 }
 
 #btn-topo {
