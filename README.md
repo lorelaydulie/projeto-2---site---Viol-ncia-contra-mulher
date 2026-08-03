@@ -3,296 +3,157 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Acolhimento</title>
+  <title>Portal de Apoio ao Estudante | Acolhimento e Empatia</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
 
+  <div class="acessibilidade-bar">
+    <span><i class="fa-solid fa-universal-access"></i> Acessibilidade:</span>
+    <button id="btn-fonte-aumentar" title="Aumentar Fonte">A+</button>
+    <button id="btn-fonte-diminuir" title="Diminuir Fonte">A-</button>
+    <button id="btn-alto-contraste" title="Alternar Alto Contraste"><i class="fa-solid fa-circle-half-stroke"></i> Alto Contraste</button>
+  </div>
+
   <header>
     <div class="logo">
-      <h1>Acolhimento</h1>
+      <h1><i class="fa-solid fa-heart-pulse"></i> Acolhimento</h1>
     </div>
     <nav>
       <ul>
-        <li><a href="#" class="active">Início</a></li>
-        <li><a href="#relatos">Relatos</a></li>
-        <li><a href="#quiz">Quiz</a></li>
-        <li><a href="#ajuda">Ajuda</a></li>
+        <li><a href="#inicio" class="nav-link active">Início</a></li>
+        <li><a href="#escuta" class="nav-link">Portal de Escuta</a></li>
+        <li><a href="#quiz" class="nav-link">Quiz</a></li>
+        <li><a href="#referencias" class="nav-link">Referências</a></li>
       </ul>
     </nav>
-    <div class="acessibilidade">
-      <button id="btn-alto-contraste">Alto Contraste</button>
-    </div>
   </header>
 
   <main>
-    <section class="hero">
-      <h2>Bem-Vinda à Nossa Comunidade</h2>
+    <section id="inicio" class="hero">
+      <h2>Portal de Apoio ao Estudante</h2>
       <p class="boas-vindas">
-        Um espaço seguro e acolhedor para compartilhar histórias, encontrar apoio e fortalecer jornadas.
+        Bem-vindo ao Portal de Apoio ao Estudante. Aqui você encontrará informações, orientações e apoio sobre situações vivenciadas no ambiente escolar, incentivando a empatia, o respeito e o combate ao preconceito e à violência.
       </p>
       
+      <div class="banner-imagem">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=80" alt="Estudantes unidos demonstrando apoio e amizade" />
+      </div>
+
       <div class="card-destaque">
         <blockquote class="frase-motivacional">
-          "Um espaço seguro para compartilhar histórias e encontrar apoio."
+          <i class="fa-solid fa-quote-left"></i> "Um espaço seguro para compartilhar histórias, encontrar apoio e saber que você nunca está sozinho."
         </blockquote>
-        <a href="#relatos" class="btn-acao">Explorar Relatos</a>
+        <a href="#escuta" class="btn-acao">Acessar Portal de Escuta</a>
       </div>
     </section>
 
-    <section id="relatos" class="secao-relatos">
-      <h3>Seção de Relatos</h3>
-      <div class="grid-relatos">
-        <div class="card-relato">
-          <h4>Minha Jornada</h4>
-          <p>"Um espaço seguro para compartilhar histórias e encontrar apoio."</p>
-        </div>
-        <div class="card-relato">
-          <h4>Superando Desafios</h4>
-          <p>"Encontrei aqui a força necessária para seguir em frente todos os dias."</p>
-        </div>
-        <div class="card-relato">
-          <h4>Minha Apoiadora</h4>
-          <p>"O acolhimento e a escuta ativa fizeram toda a diferença no meu processo."</p>
-        </div>
+    <section id="escuta" class="container-escuta secao-espaco">
+      <h3><i class="fa-solid fa-comments"></i> Portal de Escuta</h3>
+      <p class="boas-vindas">Precisa desabafar? Escreva no formulário abaixo. Lembre-se: esta é uma simulação segura e nenhuma informação será gravada.</p>
+      
+      <div class="alerta-simulacao">
+        <i class="fa-solid fa-shield-halved"></i> <strong>Espaço Seguro:</strong> Suas palavras não serão salvas em nenhum servidor.
       </div>
-    </section>
 
-    <section id="ajuda" class="container-escuta" style="margin-top: 2rem;">
-      <h3>Envie sua Mensagem</h3>
-      <form id="form-contato">
-        <label for="nome">Nome (opcional):</label>
-        <input type="text" id="nome" placeholder="Seu nome ou apelido" />
+      <form id="form-escuta">
+        <label for="nome">Nome ou Apelido (Opcional):</label>
+        <input type="text" id="nome" placeholder="Como quer ser chamado(a)?" />
 
-        <label for="mensagem">Sua Mensagem:</label>
-        <textarea id="mensagem" rows="4" placeholder="Escreva aqui..." required></textarea>
+        <label for="mensagem">Seu Desabafo / Mensagem:</label>
+        <textarea id="mensagem" rows="5" placeholder="Escreva o que está sentindo..." required></textarea>
 
-        <button type="submit" class="btn-enviar">Enviar</button>
+        <button type="submit" class="btn-enviar"><i class="fa-solid fa-paper-plane"></i> Enviar Desabafo</button>
       </form>
-      <div id="mensagem-sucesso" class="card-resposta hidden">
-        <p>Sua mensagem foi enviada com sucesso!</p>
+
+      <div id="card-resposta" class="card-resposta hidden">
+        <h4><i class="fa-solid fa-heart"></i> Mensagem de Acolhimento</h4>
+        <p id="texto-resposta-acolhimento"></p>
       </div>
+
+      <div class="orientacoes-ajuda">
+        <h4><i class="fa-solid fa-hand-holding-heart"></i> Onde buscar apoio no dia a dia:</h4>
+        <ul>
+          <li><strong>Na Escola:</strong> Procure um professor de confiança, o pedagogo ou a direção escolar.</li>
+          <li><strong>Em Casa:</strong> Converse com familiares ou adultos de sua confiança.</li>
+          <li><strong>Canais Gratuitos de Apoio:</strong>
+            <ul>
+              <li><strong>CVV (Centro de Valorização da Vida):</strong> Ligue <strong>188</strong> (Ligação gratuita 24h) ou acesse <a href="https://www.cvv.org.br" target="_blank" rel="noopener">cvv.org.br</a>.</li>
+              <li><strong>Canal Pode Falar (UNICEF):</strong> Apoio em saúde mental para jovens em <a href="https://www.podefalar.org.br" target="_blank" rel="noopener">podefalar.org.br</a>.</li>
+              <li><strong>Central de Atendimento à Mulher:</strong> Ligue <strong>180</strong>.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="quiz" class="container-quiz secao-espaco">
+      <h3><i class="fa-solid fa-circle-question"></i> Quiz Interativo: Empatia e Respeito</h3>
+      <p class="boas-vindas">Teste seus conhecimentos sobre convivência escolar, segurança e respeito às diferenças!</p>
+
+      <form id="quiz-form">
+        <div class="questao">
+          <p class="pergunta">1. Um colega recebe piadas e apelidos pejorativos repetidamente no grupo da turma. Essa atitude configura:</p>
+          <label><input type="radio" name="p1" value="a" required> Apenas uma brincadeira inofensiva entre amigos.</label><br>
+          <label><input type="radio" name="p1" value="b"> Cyberbullying, pois envolve ofensas repetidas no meio digital.</label><br>
+          <label><input type="radio" name="p1" value="c"> Algo normal que todo estudante deve aceitar.</label>
+        </div>
+
+        <div class="questao">
+          <p class="pergunta">2. Qual a melhor atitude ao presenciar um ato de preconceito ou bullying na escola?</p>
+          <label><input type="radio" name="p2" value="a"> Rir e compartilhar a situação com outros colegas.</label><br>
+          <label><input type="radio" name="p2" value="b" required> Oferecer apoio à vítima e avisar um professor ou equipe pedagógica.</label><br>
+          <label><input type="radio" name="p2" value="c"> Ignorar completamente e fingir que nada aconteceu.</label>
+        </div>
+
+        <div class="questao">
+          <p class="pergunta">3. Em relação à segurança digital, qual destas senhas é considerada a mais segura?</p>
+          <label><input type="radio" name="p3" value="a"> 12345678</label><br>
+          <label><input type="radio" name="p3" value="b"> nomedocachorro2024</label><br>
+          <label><input type="radio" name="p3" value="c" required> P@ss#E5tula!92</label>
+        </div>
+
+        <div class="questao">
+          <p class="pergunta">4. O que caracteriza uma atitude inclusiva na sala de aula?</p>
+          <label><input type="radio" name="p4" value="a" required> Respeitar as diferenças, integrar todos nas atividades e combater discriminações.</label><br>
+          <label><input type="radio" name="p4" value="b"> Formar grupos apenas com pessoas que pensam exatamente igual a você.</label><br>
+          <label><input type="radio" name="p4" value="c"> Separar colegas por características físicas ou sociais.</label>
+        </div>
+
+        <div class="questao">
+          <p class="pergunta">5. Se um(a) amigo(a) confidenciar que está passando por sofrimento emocional intenso, o que fazer?</p>
+          <label><input type="radio" name="p5" value="a"> Guardar segredo absoluto, mesmo que haja risco à vida dele(a).</label><br>
+          <label><input type="radio" name="p5" value="b" required> Ocupar-se em escutar com carinho e incentivá-lo(a) a buscar ajuda de um adulto responsável ou profissional.</label><br>
+          <label><input type="radio" name="p5" value="c"> Dizer que é exagero e ignorar o sentimento.</label>
+        </div>
+
+        <button type="submit" class="btn-enviar"><i class="fa-solid fa-check"></i> Enviar Respostas</button>
+      </form>
+
+      <div id="resultado-quiz" class="card-resposta hidden">
+        <h4><i class="fa-solid fa-award"></i> Resultado do Quiz</h4>
+        <p id="texto-resultado"></p>
+      </div>
+    </section>
+
+    <section id="referencias" class="container-referencias secao-espaco">
+      <h3><i class="fa-solid fa-book-bookmark"></i> Referências e Fontes Confiáveis</h3>
+      <p class="boas-vindas">Todo o conteúdo deste portal foi baseado em materiais de instituições governamentais e de saúde:</p>
+      <ul>
+        <li><a href="https://www.gov.br/mec/pt-br" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ministério da Educação (MEC)</a> – Cartilhas de Convivência Escolar.</li>
+        <li><a href="https://www.unicef.org/brazil/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> UNICEF Brasil</a> – Projetos de Proteção à Infância e Adolescência.</li>
+        <li><a href="https://safernet.org.br/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> SaferNet Brasil</a> – Orientação sobre Segurança Digital e Cyberbullying.</li>
+        <li><a href="https://www.cvv.org.br/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Centro de Valorização da Vida (CVV)</a> – Apoio Emocional e Prevenção.</li>
+      </ul>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 Projeto Acolhimento. Todos os direitos reservados.</p>
-    <button id="btn-topo">Voltar ao topo</button>
+    <p>&copy; 2026 Portal de Apoio ao Estudante | Projeto Acadêmico</p>
+    <button id="btn-topo" title="Voltar ao Topo"><i class="fa-solid fa-arrow-up"></i> Voltar ao topo</button>
   </footer>
 
   <script src="script.js"></script>
 </body>
-</html>/* Palette Visual - Tons de Rosa */
-:root {
-  --bg-primary: #fff5f7;
-  --bg-card: #ffffff;
-  --text-primary: #4a2e35;
-  --accent-color: #d63384;
-  --accent-hover: #b8256f;
-  --accent-soft: #f8d7da;
-  --text-muted: #72525a;
-  --border-color: #f5c2c7;
-}
-
-/* Modo Alto Contraste */
-body.alto-contraste {
-  --bg-primary: #1a0a10;
-  --bg-card: #2b121a;
-  --text-primary: #ffffff;
-  --accent-color: #ff66a3;
-  --accent-hover: #ff85b3;
-  --accent-soft: #4a1525;
-  --text-muted: #e0b0bc;
-  --border-color: #661f35;
-}
-
-/* Reset Global */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  line-height: 1.6;
-  font-size: 16px;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-header {
-  background-color: var(--bg-card);
-  border-bottom: 2px solid var(--border-color);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.logo h1 {
-  color: var(--accent-color);
-  font-size: 1.5rem;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
-}
-
-nav a {
-  text-decoration: none;
-  color: var(--text-primary);
-  font-weight: 600;
-  transition: color 0.2s, border-color 0.2s;
-}
-
-nav a.active, nav a:hover {
-  color: var(--accent-color);
-  border-bottom: 2px solid var(--accent-color);
-}
-
-.acessibilidade button {
-  padding: 0.3rem 0.6rem;
-  cursor: pointer;
-  background-color: var(--accent-soft);
-  color: var(--text-primary);
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  font-weight: bold;
-}
-
-main {
-  flex: 1;
-  max-width: 900px;
-  width: 100%;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-.hero, .container-escuta, .container-quiz, .container-referencias {
-  background-color: var(--bg-card);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(214, 51, 132, 0.08);
-  border: 1px solid var(--border-color);
-}
-
-.boas-vindas {
-  font-size: 1.15rem;
-  margin: 1rem 0;
-  color: var(--text-muted);
-}
-
-.card-destaque {
-  border-left: 5px solid var(--accent-color);
-  padding: 1.2rem;
-  background-color: var(--bg-primary);
-  margin-top: 1.5rem;
-  border-radius: 0 8px 8px 0;
-}
-
-.secao-relatos {
-  margin-top: 2rem;
-}
-
-.grid-relatos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.card-relato {
-  background-color: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-.card-relato h4 {
-  color: var(--accent-color);
-  margin-bottom: 0.5rem;
-}
-
-.card-relato p {
-  font-size: 0.95rem;
-  font-style: italic;
-}
-
-.btn-acao, .btn-enviar {
-  display: inline-block;
-  background-color: var(--accent-color);
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 6px;
-  text-decoration: none;
-  margin-top: 1rem;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
-  transition: background-color 0.2s;
-}
-
-.btn-acao:hover, .btn-enviar:hover {
-  background-color: var(--accent-hover);
-}
-
-blockquote.frase-motivacional {
-  font-style: italic;
-  margin: 1rem 0;
-  padding-left: 1rem;
-  border-left: 3px solid var(--accent-color);
-}
-
-form label {
-  display: block;
-  margin-top: 1rem;
-  font-weight: bold;
-}
-
-input[type="text"], textarea {
-  width: 100%;
-  padding: 0.8rem;
-  margin-top: 0.5rem;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-}
-
-.hidden {
-  display: none;
-}
-
-.card-resposta {
-  margin-top: 1.5rem;
-  padding: 1.5rem;
-  border-radius: 8px;
-  background-color: var(--bg-primary);
-  border: 1px solid var(--accent-color);
-}
-
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  background-color: var(--bg-card);
-  border-top: 1px solid var(--border-color);
-  margin-top: 2rem;
-}
-
-#btn-topo {
-  margin-top: 0.5rem;
-  padding: 0.4rem 0.8rem;
-  cursor: pointer;
-  background-color: var(--accent-soft);
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-}
+</html>
