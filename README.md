@@ -1,4 +1,88 @@
-/* Palette Visual - Tons de Rosa */
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acolhimento</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <h1>Acolhimento</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" class="active">Início</a></li>
+        <li><a href="#relatos">Relatos</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#ajuda">Ajuda</a></li>
+      </ul>
+    </nav>
+    <div class="acessibilidade">
+      <button id="btn-alto-contraste">Alto Contraste</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Bem-Vinda à Nossa Comunidade</h2>
+      <p class="boas-vindas">
+        Um espaço seguro e acolhedor para compartilhar histórias, encontrar apoio e fortalecer jornadas.
+      </p>
+      
+      <div class="card-destaque">
+        <blockquote class="frase-motivacional">
+          "Um espaço seguro para compartilhar histórias e encontrar apoio."
+        </blockquote>
+        <a href="#relatos" class="btn-acao">Explorar Relatos</a>
+      </div>
+    </section>
+
+    <section id="relatos" class="secao-relatos">
+      <h3>Seção de Relatos</h3>
+      <div class="grid-relatos">
+        <div class="card-relato">
+          <h4>Minha Jornada</h4>
+          <p>"Um espaço seguro para compartilhar histórias e encontrar apoio."</p>
+        </div>
+        <div class="card-relato">
+          <h4>Superando Desafios</h4>
+          <p>"Encontrei aqui a força necessária para seguir em frente todos os dias."</p>
+        </div>
+        <div class="card-relato">
+          <h4>Minha Apoiadora</h4>
+          <p>"O acolhimento e a escuta ativa fizeram toda a diferença no meu processo."</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ajuda" class="container-escuta" style="margin-top: 2rem;">
+      <h3>Envie sua Mensagem</h3>
+      <form id="form-contato">
+        <label for="nome">Nome (opcional):</label>
+        <input type="text" id="nome" placeholder="Seu nome ou apelido" />
+
+        <label for="mensagem">Sua Mensagem:</label>
+        <textarea id="mensagem" rows="4" placeholder="Escreva aqui..." required></textarea>
+
+        <button type="submit" class="btn-enviar">Enviar</button>
+      </form>
+      <div id="mensagem-sucesso" class="card-resposta hidden">
+        <p>Sua mensagem foi enviada com sucesso!</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Projeto Acolhimento. Todos os direitos reservados.</p>
+    <button id="btn-topo">Voltar ao topo</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>/* Palette Visual - Tons de Rosa */
 :root {
   --bg-primary: #fff5f7;
   --bg-card: #ffffff;
