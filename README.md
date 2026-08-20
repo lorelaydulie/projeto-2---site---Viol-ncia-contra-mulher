@@ -1,365 +1,351 @@
-:root {
-    /* Paleta inspirada na Kushina Uzumaki */
-    --primary: #d90429;             /* Vermelho vibrante (Cabelo da Kushina) */
-    --primary-hover: #ef233c;       /* Vermelho mais claro para interações */
-    --primary-dark: #8d0801;        /* Carmesim profundo */
-    --sakura-pink: #ffb7c5;         /* Tom suave de Flor de Sakura */
-    --bg-color: #fff0f3;           /* Fundo suave rosado/claro */
-    --bg-alt: #ffffff;
-    --text-color: #2b2d42;
-    --card-bg: #ffffff;
-    --border-color: #ffccd5;
-    --font-size-base: 16px;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-/* Modo Alto Contraste */
-body.alto-contraste {
-    --primary: #ffff00;
-    --primary-hover: #ffd700;
-    --primary-dark: #ffff00;
-    --sakura-pink: #ffff00;
-    --bg-color: #000000;
-    --bg-alt: #1a1a1a;
-    --text-color: #ffffff;
-    --card-bg: #111111;
-    --border-color: #ffff00;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition: background-color 0.3s, color 0.3s;
-}
+    <title>Akai Kokoro | Portal de Apoio</title>
 
-html {
-    scroll-behavior: smooth;
-    font-size: var(--font-size-base);
-}
+    <link rel="stylesheet" href="css/style.css">
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    /* Padrão sutil de flores de Sakura usando SVG no background */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 100 100'%3E%3Cpath fill='%25ffb7c5' opacity='0.25' d='M50 30 C45 15, 30 15, 35 30 C20 25, 15 40, 30 45 C15 50, 20 65, 35 60 C30 75, 45 75, 50 60 C55 75, 70 75, 65 60 C80 65, 85 50, 70 45 C85 40, 80 25, 65 30 C70 15, 55 15, 50 30 Z'/%3E%3Ccircle cx='50' cy='45' r='4' fill='%25d90429' opacity='0.3'/%3E%3C/svg%3E");
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
 
-/* Barra Superior de Acessibilidade */
-.top-bar {
-    background-color: var(--primary-dark);
-    padding: 8px 5%;
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    border-bottom: 2px solid var(--sakura-pink);
-}
+<body>
 
-.top-bar button {
-    background: transparent;
-    border: 1px solid var(--sakura-pink);
-    color: #fff;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 0.85rem;
-}
-m;
-}
+    <div class="particles"></div>
 
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
+    <header class="header">
 
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 1rem;
-}
+        <a href="index.html" class="logo">
+            <span class="logo-symbol">紅</span>
+            <span>
+                <strong>AKAI</strong>
+                <small>KOKORO</small>
+            </span>
+        </a>
 
-.form-group input:focus, .form-group textarea:focus {
-    outline: none;
-    border-color: var(--primar
-.top-bar button:hover {
-    background-color: var(--primary-hover);
-}
+        <nav class="nav" id="nav">
 
-/* Header & Nav */
-header {
-    background-color: var(--bg-alt);
-    padding: 1rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 3px solid var(--primary);
-    box-shadow: 0 4px 10px rgba(217, 4, 41, 0.1);
-}
+            <a href="index.html" class="active">Início</a>
 
-.logo {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: var(--primary);
-}
+            <a href="escuta.html">
+                <span>♡</span> Portal de Escuta
+            </a>
 
-.logo i {
-    color: var(--primary-hover);
-}
+            <a href="quiz.html">
+                <span>✦</span> Quiz
+            </a>
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-}
+            <a href="referencias.html">
+                <span>▣</span> Referências
+            </a>
 
-nav a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 600;
-    position: relative;
-    padding-bottom: 4px;
-}
+        </nav>
 
-nav a:hover {
-    color: var(--primary);
-}
+        <button class="menu-button" id="menuButton">☰</button>
 
-nav a::after {
-    content: '🌸';
-    font-size: 0.6rem;
-    position: absolute;
-    right: -12px;
-    top: -2px;
-    opacity: 0;
-    transition: opacity 0.2s;
-}
+        <div class="accessibility">
 
-nav a:hover::after {
-    opacity: 1;
-}
+            <button id="fontButton" title="Aumentar fonte">
+                A+
+            </button>
 
-/* Hero / Início */
-.hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    padding: 4rem 5%;
-    align-items: center;
-}
+            <button id="contrastButton" title="Alto contraste">
+                ◐
+            </button>
 
-.hero-card {
-    background-color: var(--card-bg);
-    padding: 30px;
-    border-radius: 16px;
-    border: 2px solid var(--border-color);
-    box-shadow: 0 8px 20px rgba(217, 4, 41, 0.08);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
+            <button id="darkButton" title="Modo escuro">
+                ☾
+            </button>
 
-/* Detalhe de flor de sakura no canto do card */
-.hero-card::before {
-    content: '🌸';
-    font-size: 3rem;
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    opacity: 0.4;
-}
+        </div>
 
-.main-icon {
-    font-size: 4rem;
-    color: var(--primary);
-    margin-bottom: 15px;
-}
+    </header>
 
-/* Seções Gerais */
-.section-container m;
-}
 
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
+    <main>
 
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 1rem;
-}
+        <section class="hero">
 
-.form-group input:focus, .form-group textarea:focus {
-    outline: none;
-    border-color: var(--primar{
-    padding: 4rem 5%;
-    max-width: 1000px;
-    margin: 0 auto;
-}
+            <div class="seal seal-one"></div>
+            <div class="seal seal-two"></div>
 
-.bg-alt {
-    background-color: var(--bg-alt);
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-}
+            <div class="hero-content">
 
-.subtitle {
-    margin-bottom: 20px;
-    opacity: 0.85;
-}
+                <p class="eyebrow">
+                    PORTAL DE APOIO AO ESTUDANTE
+                </p>
 
-/* Form de Escuta */
-#form-escuta {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+                <h1>
+                    AKAI
+                    <span>KOKORO</span>
+                </h1>
 
-textarea {
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: 2px solid var(--border-color);
-    background-color: var(--card-bg);
-    color: var(--text-color);
-    font-size: 1rem;
-}
+                <div class="red-line"></div>
 
-textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-}
+                <h2>
+                    Seu jeito de ser não precisa caber
+                    em nenhum padrão.
+                </h2>
 
-.resposta-box {
-    margin-top: 20px;
-    background-color: var(--card-bg);
-    padding: 20px;
-    border-radius: 12px;
-    border-left: 6px solid var(--primary);
-    box-shadow: 0 4px 12px rgba(217, 4, 41, 0.1);
-}
+                <p class="hero-text">
+                    Um espaço criado para falar sobre respeito,
+                    empatia e combate ao preconceito dentro
+                    e fora da escola.
+                </p>
 
-.check-icon {
-    color: var(--primary);
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
+                <div class="hero-buttons">
 
-/* Quiz */
-.opcoes-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-}
+                    <a href="escuta.html" class="btn btn-primary">
+                        ♡ Quero ser ouvido
+                    </a>
 
-.opcao-btn {
-    padding: 12px 16px;
-    border: 2px solid var(--border-color);
-    background-color: var(--card-bg);
-    color: var(--text-color);
-    border-radius: 8px;
-    cursor: pointer;
-    text-align: left;
-    font-size: 1rem;
-    font-weight: 500;
-}
+                    <a href="quiz.html" class="btn btn-outline">
+                        ✦ Fazer o quiz
+                    </a>
 
-.opcao-btn:hover {
-    background-color: var(--primary);
-    color: #ffffff;
-    border-color: var(--primary);
-}
+                </div>
 
-/* Botões */
-.btn-primary {
-    background-color: var(--primary);
-    color: #ffffff;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0 4px 12px rgba(217, 4, 41, 0.3);
-}
+            </div>
 
-.btn-primary:hover {
-    background-color: var(--primary-hover);
-}
 
-/* Lista Referências */
-.lista-referencias {
-    list-style: none;
-}
+            <div class="hero-art">
 
-.lista-referencias li {
-    margin-bottom: 15px;
-    padding: 10px;
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-}
+                <div class="chain chain-left"></div>
+                <div class="chain chain-right"></div>
 
-.lista-referencias a {
-    color: var(--primary);
-    font-weight: bold;
-    text-decoration: none;
-}
+                <div class="energy-circle"></div>
 
-.lista-referencias a:hover {
-    text-decoration: underline;
-}
+                <img src="img/hero.svg"
+                     alt="Ilustração em estilo anime representando acolhimento e coragem">
 
-/* Voltar ao Topo */
-#btn-topo {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--primary);
-    color: white;
-    border: 2px solid var(--sakura-pink);
-    padding: 12px 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
+                <div class="quote-card">
+                    <span>「</span>
+                    <p>
+                        Diferenças não<br>
+                        diminuem ninguém.
+                    </p>
+                    <span>」</span>
+                </div>
 
-#btn-topo:hover {
-    background-color: var(--primary-dark);
-}
+            </div>
 
-.hidden {
-    display: none;
-}
+        </section>
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: var(--primary-dark);
-    color: #ffffff;
-    margin-top: 40px;
-    border-top: 3px solid var(--sakura-pink);
-}
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .hero {
-        grid-template-columns: 1fr;
-    }
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
+        <section class="welcome section">
+
+            <div class="section-title">
+
+                <span>01</span>
+
+                <div>
+                    <p>UM ESPAÇO DIFERENTE</p>
+
+                    <h2>
+                        Aqui, você pode
+                        <strong>ser você.</strong>
+                    </h2>
+                </div>
+
+            </div>
+
+            <p class="section-description">
+                O Akai Kokoro nasceu para lembrar que ninguém deve
+                ser excluído por causa de sua aparência, origem,
+                personalidade, cultura, deficiência ou qualquer outra
+                característica que faça parte de quem é.
+            </p>
+
+
+            <div class="cards">
+
+                <article class="info-card">
+
+                    <div class="card-icon">♡</div>
+
+                    <h3>Respeito</h3>
+
+                    <p>
+                        Respeitar significa reconhecer que todas
+                        as pessoas possuem dignidade e merecem
+                        ser tratadas com consideração.
+                    </p>
+
+                    <span class="card-number">01</span>
+
+                </article>
+
+
+                <article class="info-card featured">
+
+                    <div class="card-icon">✦</div>
+
+                    <h3>Empatia</h3>
+
+                    <p>
+                        Tente compreender antes de julgar.
+                        Ouvir alguém pode ser o primeiro passo
+                        para transformar uma situação.
+                    </p>
+
+                    <span class="card-number">02</span>
+
+                </article>
+
+
+                <article class="info-card">
+
+                    <div class="card-icon">🔥</div>
+
+                    <h3>Coragem</h3>
+
+                    <p>
+                        Pedir ajuda não significa fraqueza.
+                        Significa reconhecer que você merece
+                        apoio.
+                    </p>
+
+                    <span class="card-number">03</span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="message-section">
+
+            <div class="message-symbol">紅</div>
+
+            <div>
+
+                <p class="eyebrow">UMA MENSAGEM PARA VOCÊ</p>
+
+                <h2>
+                    "Você não precisa enfrentar
+                    tudo sozinho."
+                </h2>
+
+                <p>
+                    Se alguma situação estiver machucando você,
+                    procure alguém de confiança. Falar sobre o
+                    problema é um passo importante.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="anti-prejudice section">
+
+            <div class="section-title">
+
+                <span>02</span>
+
+                <div>
+
+                    <p>COMBATE AO PRECONCEITO</p>
+
+                    <h2>
+                        O problema nunca é
+                        <strong>ser diferente.</strong>
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="prejudice-grid">
+
+                <div class="big-stat">
+                    <span>01</span>
+                    <h3>Não normalize</h3>
+                    <p>
+                        Ofensas e humilhações não deixam de ser
+                        prejudiciais apenas porque alguém chamou
+                        de "brincadeira".
+                    </p>
+                </div>
+
+                <div class="big-stat">
+                    <span>02</span>
+                    <h3>Não fique em silêncio</h3>
+                    <p>
+                        Se você presenciar uma situação de
+                        preconceito, procure um adulto responsável.
+                    </p>
+                </div>
+
+                <div class="big-stat">
+                    <span>03</span>
+                    <h3>Acolha</h3>
+                    <p>
+                        Uma palavra de apoio pode ajudar alguém
+                        que esteja se sentindo isolado.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="cta">
+
+            <div class="cta-seal">
+                ✦
+            </div>
+
+            <h2>
+                Quer conversar?
+            </h2>
+
+            <p>
+                O Portal de Escuta possui um espaço de desabafo
+                simulado e mensagens de acolhimento.
+            </p>
+
+            <a href="escuta.html" class="btn btn-primary">
+                Entrar no Portal de Escuta →
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <button id="topButton" class="top-button">
+        ↑
+    </button>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            AKAI KOKORO
+        </div>
+
+        <p>
+            Portal de Apoio ao Estudante
+        </p>
+
+        <p class="copyright">
+            Projeto acadêmico • HTML • CSS • JavaScript
+        </p>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
